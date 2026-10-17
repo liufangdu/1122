@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#eef8e6" />
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       ① 站点信息 — 改标题 / 描述时只动这一段
+       ═══════════════════════════════════════════════════════════════ -->
+  <title>刘松鸣 · 沈阳理工大学 | 爱山、爱旅行、爱猫</title>
+  <meta name="description" content="刘松鸣，沈阳理工大学在读学生。喜欢旅行、自然景观和撸猫，在山和湖之间找安静。" />
+  <meta name="author" content="刘松鸣" />
+  <meta name="keywords" content="刘松鸣, 沈阳理工大学, 个人主页, 旅行, 自然, 猫, 像素风" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="刘松鸣 · 爱山、爱旅行、爱猫" />
+  <meta property="og:description" content="沈阳理工大学在读学生。闲下来就想往山里和湖边跑，回宿舍先抱猫。" />
+  <meta property="og:url" content="https://liufangdu.github.io/1122/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="刘松鸣 · 爱山、爱旅行、爱猫" />
+  <meta name="twitter:description" content="沈阳理工大学在读学生。喜欢旅行、自然景观和撸猫。" />
+
+  <link rel="icon" href="assets/img/icon-paw.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <noscript>
+    <style>
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .bar > span { width: var(--w) !important; }
+    </style>
+  </noscript>
+
+  <!-- 主题优先级：localStorage > <html data-theme> > 系统偏好 -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var attr = document.documentElement.getAttribute('data-theme');
+        var sys = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        var theme = saved || ((attr === 'light' || attr === 'dark') ? attr : sys);
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) { /* 忽略 */ }
+    })();
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <!-- ═══════════════════ 顶栏 ═══════════════════ -->
+  <header class="site-header" id="site-header">
+    <nav class="nav container" aria-label="主导航">
+      <a class="brand" href="#top" aria-label="返回顶部">
+        <img class="brand-mark" src="assets/img/icon-tree.svg" alt="" width="22" height="26" />
+        <span class="brand-name">刘松鸣</span>
+        <span class="brand-en pixel">LIU&nbsp;SONGMING</span>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#about" class="nav-link">关于</a></li>
+        <li><a href="#hobbies" class="nav-link">爱好</a></li>
+        <li><a href="#travel" class="nav-link">旅途</a></li>
+        <li><a href="#skills" class="nav-link">技能</a></li>
+        <li><a href="#contact" class="nav-link">联系</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn-icon theme-toggle" type="button" aria-label="切换深浅色主题" title="切换主题">
+          <svg class="i-sun" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><rect x="6" y="0" width="2" height="1"/><rect x="1" y="1" width="2" height="1"/><rect x="6" y="1" width="2" height="1"/><rect x="11" y="1" width="2" height="1"/><rect x="1" y="2" width="2" height="1"/><rect x="11" y="2" width="2" height="1"/><rect x="6" y="3" width="2" height="1"/><rect x="4" y="4" width="6" height="1"/><rect x="4" y="5" width="6" height="1"/><rect x="0" y="6" width="2" height="1"/><rect x="3" y="6" width="8" height="1"/><rect x="12" y="6" width="2" height="1"/><rect x="0" y="7" width="2" height="1"/><rect x="3" y="7" width="8" height="1"/><rect x="12" y="7" width="2" height="1"/><rect x="4" y="8" width="6" height="1"/><rect x="4" y="9" width="6" height="1"/><rect x="6" y="10" width="2" height="1"/><rect x="1" y="11" width="2" height="1"/><rect x="11" y="11" width="2" height="1"/><rect x="1" y="12" width="2" height="1"/><rect x="6" y="12" width="2" height="1"/><rect x="11" y="12" width="2" height="1"/><rect x="6" y="13" width="2" height="1"/></svg>
+          <svg class="i-moon" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><rect x="4" y="2" width="2" height="1"/><rect x="3" y="3" width="3" height="1"/><rect x="2" y="4" width="3" height="1"/><rect x="2" y="5" width="3" height="1"/><rect x="2" y="6" width="3" height="1"/><rect x="2" y="7" width="4" height="1"/><rect x="2" y="8" width="4" height="1"/><rect x="2" y="9" width="5" height="1"/><rect x="3" y="10" width="7" height="1"/><rect x="4" y="11" width="5" height="1"/></svg>
+        
+        
+        </button>
+
+        <button class="btn-icon nav-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="nav-menu">
+          <svg class="i-menu" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <path d="M2 3h12v2H2zM2 7h12v2H2zM2 11h12v2H2z"/>
+          </svg>
+          <svg class="i-close" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><g transform="rotate(45 8 8)"><rect x="2" y="7" width="12" height="2"/><rect x="7" y="2" width="2" height="12"/></g></svg>
+        </button>
+      </div>
+
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ═══════════════════ 首屏 ═══════════════════ -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow pixel-tag">◆ STATUS · 在读学生</p>
+
+          <h1>你好，我是<br /><span class="hl">刘松鸣</span></h1>
+
+          <p class="hero-role">
+            一个喜欢
+            <span class="typed-wrap"><span class="typed" id="typed" aria-live="polite"></span><span class="caret" aria-hidden="true"></span></span>
+            的人
+          </p>
+
+          <p class="hero-desc">
+            在沈阳理工大学读书。闲下来就想往山里和湖边跑——看云、看树、看水，把好看的光都记下来。
+            回到宿舍第一件事，是抱住那只猫。
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#hobbies">
+              看看我的爱好
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="btn btn-ghost" href="#contact">联系我</a>
+          </div>
+
+          <ul class="socials" aria-label="账号链接">
+            <li><a class="chip" href="https://github.com/liufangdu/1122" target="_blank" rel="noopener noreferrer"><span class="chip-dot" aria-hidden="true"></span>GITHUB</a></li>
+            <li><a class="chip" href="mailto:hello@example.com"><span class="chip-dot" aria-hidden="true"></span>EMAIL</a></li>
+          </ul>
+        </div>
+
+        <figure class="scene">
+          <button class="scene-frame" type="button" aria-label="点一下画面里的小猫">
+            <img src="assets/img/hero-scene.svg" width="96" height="54" alt="像素风景：雪山、松树、草地，还有一只坐着看风景的小猫" />
+          </button>
+          <figcaption class="scene-caption pixel">SCENE 001 · 山脚下的午后 · 点一下小猫</figcaption>
+        </figure>
+      </div>
+
+      <div class="ground" aria-hidden="true"></div>
+    </section>
+
+    <!-- ═══════════════════ 关于 ═══════════════════ -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow pixel">◆ ABOUT ME</p>
+          <h2 class="section-title">关于我</h2>
+          <p class="section-sub">一个把周末交给山，把夜路留给猫的学生。</p>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p class="lead">我是刘松鸣，沈阳理工大学的一名学生。</p>
+            <p>课业之外，大部分时间花在两件事上：往外走，和往山里看。</p>
+            <p>
+              喜欢旅行，不是为了打卡，而是为了换个地方发呆——在湖边坐一下午，在山脊上等一次日落，
+              在陌生的城市里心安理得地走错一次路。自然景观对我有种奇怪的治愈力：看一整片连绵的山，
+              很多烦恼会自动缩小。
+            </p>
+            <p>
+              生活里还有一只猫。它负责在我写作业的时候踩键盘，在我出门前拦门。
+              喜欢动物的人大概都懂：被一只小动物信任，是件很奢侈的事。
+            </p>
+            <p class="sign pixel">&gt; 松鸣</p>
+          </div>
+
+          <aside class="panel reveal" style="--d: .1s" aria-label="个人信息">
+            <p class="panel-title pixel">◇ CHARACTER</p>
+            <ul class="stat-list">
+              <li><span class="stat-k">学校</span><span class="stat-v">沈阳理工大学</span></li>
+              <li><span class="stat-k">身份</span><span class="stat-v">在读学生</span></li>
+              <li><span class="stat-k">坐标</span><span class="stat-v">辽宁 · 沈阳</span></li>
+              <li><span class="stat-k">爱好</span><span class="stat-v">旅行 · 自然 · 撸猫</span></li>
+              <li><span class="stat-k">状态</span><span class="stat-v"><span class="dot-live" aria-hidden="true"></span>正在攒下一趟行程</span></li>
+            </ul>
+            <button class="copy-line" type="button" data-copy="hello@example.com">
+              <span class="copy-k">邮箱</span>
+              <span class="copy-v">hello@example.com</span>
+              <span class="copy-hint">点击复制</span>
+            </button>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ 爱好 ═══════════════════ -->
+    <section class="section section-alt" id="hobbies">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow pixel">◆ HOBBIES</p>
+          <h2 class="section-title">我喜欢的三个东西</h2>
+          <p class="section-sub">说白了就是：出门、看山、回家抱猫。</p>
+        </header>
+
+        <div class="cards">
+          <article class="card hobby reveal" style="--d: 0s">
+            <div class="card-icon"><img src="assets/img/icon-pin.svg" alt="" width="34" height="34" /></div>
+            <h3>旅行</h3>
+            <p>背一个包，坐最慢的车。比起景点，更喜欢路上的城市、车窗外的农田，和突然从地平线冒出来的山。</p>
+            <ul class="tags"><li>背包</li><li>慢车</li><li>说走就走</li></ul>
+          </article>
+
+          <article class="card hobby reveal" style="--d: .08s">
+            <div class="card-icon"><img src="assets/img/icon-mountain.svg" alt="" width="40" height="28" /></div>
+            <h3>自然景观</h3>
+            <p>山、湖、森林、星空。最想做的事，是找一个完全没有光污染的地方，躺着看完一整夜。</p>
+            <ul class="tags"><li>山脊</li><li>湖泊</li><li>星空</li></ul>
+          </article>
+
+          <article class="card hobby reveal" style="--d: .16s">
+            <div class="card-icon"><img src="assets/img/icon-paw.svg" alt="" width="34" height="29" /></div>
+            <h3>撸猫</h3>
+            <p>猫是充电器。路过楼下的流浪猫会蹲下来聊两句，兜里常备一小包猫粮。</p>
+            <ul class="tags"><li>吸猫</li><li>猫粮常备</li><li>铲屎</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ 旅途 ═══════════════════ -->
+    <section class="section" id="travel">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow pixel">◆ TRAVEL</p>
+          <h2 class="section-title">旅途清单</h2>
+          <p class="section-sub">下面这些地方在愿望清单上排着队，一个个去解锁。</p>
+        </header>
+
+        <ul class="travel-grid">
+          <li class="travel-card reveal" style="--d: 0s">
+            <span class="travel-ico" aria-hidden="true">◆</span>
+            <h3>长白山</h3>
+            <p>想看一次天池，顺便把自己冻成一件羽绒服。</p>
+            <span class="status">待出发</span>
+          </li>
+          <li class="travel-card reveal" style="--d: .06s">
+            <span class="travel-ico" aria-hidden="true">◆</span>
+            <h3>呼伦贝尔</h3>
+            <p>夏天的草原和地平线，据说一眼能看到很远。</p>
+            <span class="status">待出发</span>
+          </li>
+          <li class="travel-card reveal" style="--d: .12s">
+            <span class="travel-ico" aria-hidden="true">◆</span>
+            <h3>青海湖</h3>
+            <p>环湖骑一段，看看水到底能有多蓝。</p>
+            <span class="status status-next">在计划</span>
+          </li>
+          <li class="travel-card reveal" style="--d: .18s">
+            <span class="travel-ico" aria-hidden="true">◆</span>
+            <h3>稻城亚丁</h3>
+            <p>雪山、草甸、牛奶海，听说走两步就要喘。</p>
+            <span class="status">待出发</span>
+          </li>
+          <li class="travel-card reveal" style="--d: .24s">
+            <span class="travel-ico" aria-hidden="true">◆</span>
+            <h3>喀纳斯</h3>
+            <p>秋天去看那片金黄，顺便验证一下照片有没有骗人。</p>
+            <span class="status">待出发</span>
+          </li>
+          <li class="travel-card reveal" style="--d: .3s">
+            <span class="travel-ico" aria-hidden="true">◆</span>
+            <h3>洱海</h3>
+            <p>骑车绕一圈，在某个路口停下来发呆。</p>
+            <span class="status status-next">在计划</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ 技能 ═══════════════════ -->
+    <section class="section section-alt" id="skills">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow pixel">◆ SKILLS</p>
+          <h2 class="section-title">技能点</h2>
+          <p class="section-sub">还在长的树，慢慢加点。</p>
+        </header>
+
+        <div class="skill-wrap">
+          <div class="bars reveal">
+            <div class="skill-bar">
+              <div class="skill-head"><span>前端开发 <em>HTML / CSS / JS</em></span><span class="val pixel">65</span></div>
+              <div class="bar"><span style="--w: 65%"></span></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-head"><span>Python <em>脚本与数据处理</em></span><span class="val pixel">70</span></div>
+              <div class="bar"><span style="--w: 70%"></span></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-head"><span>Git 与命令行</span><span class="val pixel">60</span></div>
+              <div class="bar"><span style="--w: 60%"></span></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-head"><span>摄影与修图</span><span class="val pixel">55</span></div>
+              <div class="bar"><span style="--w: 55%"></span></div>
+            </div>
+          </div>
+
+          <aside class="learning reveal" style="--d: .1s">
+            <p class="panel-title pixel">◇ NOW LEARNING</p>
+            <ul class="learn-list">
+              <li><span aria-hidden="true">▸</span> 数据结构与算法</li>
+              <li><span aria-hidden="true">▸</span> 把照片修得比眼睛看到的好看</li>
+              <li><span aria-hidden="true">▸</span> 一个人规划一趟不赶时间的旅行</li>
+            </ul>
+            <p class="learn-note">下一次更新，也许就多点亮一个技能。</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ 联系 ═══════════════════ -->
+    <section class="section" id="contact">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow pixel">◆ CONTACT</p>
+          <h2 class="section-title">聊点什么？</h2>
+          <p class="section-sub">约一场旅行、问一句猫的事，或者只是打个招呼。</p>
+        </header>
+
+        <div class="contact-grid">
+          <a class="card contact reveal" href="https://github.com/liufangdu/1122" target="_blank" rel="noopener noreferrer" style="--d: 0s">
+            <span class="contact-ico pixel" aria-hidden="true">&lt;/&gt;</span>
+            <span class="contact-k pixel">GITHUB</span>
+            <span class="contact-v">github.com/liufangdu/1122</span>
+            <span class="contact-hint">去看看源码 →</span>
+          </a>
+
+          <button class="card contact reveal" type="button" data-copy="hello@example.com" style="--d: .08s">
+            <span class="contact-ico pixel" aria-hidden="true">@</span>
+            <span class="contact-k pixel">EMAIL</span>
+            <span class="contact-v">hello@example.com</span>
+            <span class="contact-hint">点击复制</span>
+          </button>
+        </div>
+
+        <div class="cta reveal" style="--d: .12s">
+          <p>想约一场说走就走的旅行，或者只是聊聊猫？<strong>随时可以找我。</strong></p>
+          <a class="btn btn-primary" href="mailto:hello@example.com">
+            写封邮件
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════ 页脚 ═══════════════════ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">
+        <img src="assets/img/icon-tree.svg" alt="" width="18" height="21" />
+        刘松鸣 · <span class="pixel">LIU&nbsp;SONGMING</span>
+      </p>
+      <p class="footer-note">沈阳理工大学 · 用 HTML / CSS / 原生 JS 手写 · 无框架、无追踪</p>
+      <p class="footer-copy pixel">© <span id="year">2026</span> LIU SONGMING</p>
+    </div>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="回到顶部" title="回到顶部">
+    <span aria-hidden="true">▲</span>
+  </button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
