@@ -602,6 +602,7 @@ em { font-style: normal; }
 }
 .status-next { background: var(--leaf-soft); color: var(--line); }
 [data-theme="dark"] .status-next { color: var(--text); }
+.status-done { background: var(--leaf); color: #08160d; border-color: var(--line); }
 
 /* ── 10. 技能 ──────────────────────────────────────────────────── */
 .skill-wrap {
